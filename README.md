@@ -32,7 +32,15 @@ social-media-platform/
 │   └── package.json
 ├── react-client/           # React/Next.js frontend (to be created)
 ├── vue-client/             # Vue frontend (to be created)
-├── backend-express/        # Express.js backend (to be created)
+├── express-server/         # Express.js + TypeScript backend with MongoDB
+│   ├── src/
+│   │   ├── config/        # Database configuration
+│   │   ├── controllers/   # Route controllers
+│   │   ├── middleware/    # Auth & error middleware
+│   │   ├── models/        # Mongoose models
+│   │   ├── routes/        # API routes
+│   │   └── utils/         # Utility functions
+│   └── package.json
 ├── backend-nextjs/         # Next.js API backend (to be created)
 ├── backend-spring/         # Spring Boot backend (to be created)
 ├── backend-python/         # Python backend (to be created)
@@ -94,9 +102,10 @@ npm run dev
 
 ##### Express.js Backend
 ```bash
-cd backend-express
+cd express-server
 npm install
-npm start
+# Create .env file from .env.example
+npm run dev
 # API will be available at http://localhost:4000
 ```
 
@@ -149,9 +158,23 @@ psql -U postgres
 
 Create `.env` files in each backend directory:
 
-**Express.js / Next.js**
+**Express.js**
 ```env
 PORT=4000
+NODE_ENV=development
+MONGODB_URI=mongodb://localhost:27017/social-media-platform
+JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
+JWT_EXPIRE=7d
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASSWORD=your-app-password
+EMAIL_FROM=noreply@socialmediaplatform.com
+FRONTEND_URL=http://localhost:3000
+```
+
+**Next.js**
+```env
 MONGODB_URI=mongodb://localhost:27017/social-media-platform
 MYSQL_HOST=localhost
 MYSQL_USER=root
@@ -233,7 +256,7 @@ npm test
 ### Backend Testing
 ```bash
 # Express.js
-cd backend-express
+cd express-server
 npm test
 
 # Next.js
