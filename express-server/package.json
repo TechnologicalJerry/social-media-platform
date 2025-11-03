@@ -1,0 +1,32 @@
+{
+  "name": "social-media-platform",
+  "version": "1.0.0",
+  "description": "A full-featured social media platform built with Node.js, Express, and MongoDB that allows users to create profiles, share posts, like and comment, follow other users, and chat in real-time using Socket.IO. The backend includes secure JWT authentication, RESTful APIs, and scalable architecture for modern social networking applications.",
+  "keywords": [
+    "social-media",
+    "nodejs",
+    "express",
+    "mongodb",
+    "socket.io",
+    "rest-api",
+    "jwt",
+    "authentication",
+    "real-time",
+    "chat-app"
+  ],
+  "homepage": "https://github.com/TechnologicalJerry/social-media-platform#readme",
+  "bugs": {
+    "url": "https://github.com/TechnologicalJerry/social-media-platform/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechnologicalJerry/social-media-platform.git"
+  },
+  "license": "ISC",
+  "author": "technojerry",
+  "type": "commonjs",
+  "main": "server.ts",
+  "scripts": {
+    "test": "jest"
+  }
+}
